@@ -17,7 +17,7 @@ function writeToFile(txs, outputFile) {
         }
 
         if (!tx.compound && !tx.sendToSelf) {
-            writer.write(`"${tx.timestamp}","${tx.sendAmount || ''}","${tx.sendAmount ? 'SDR' : ''}","${tx.receiveAmount || ''}","${tx.receiveAmount ? 'KAS' : ''}","${tx.sendAmount ? tx.feeAmount : ''}","${tx.sendAmount ? 'KAS' : ''}","${tx.txHash}"\n`);
+            writer.write(`"${tx.timestamp}","${tx.sendAmount || ''}","${tx.sendAmount ? 'SDR' : ''}","${tx.receiveAmount || ''}","${tx.receiveAmount ? 'SDR' : ''}","${tx.sendAmount ? tx.feeAmount : ''}","${tx.sendAmount ? 'SDR' : ''}","${tx.txHash}"\n`);
         }
 
         prev = tx;
@@ -48,5 +48,5 @@ async function parseAddresses() {
 if (require.main === module) {
     parseAddresses()
         .then(generateReport)
-        .then((processedTxs) => writeToFile(processedTxs, 'kaspa-transactions.csv'));
+        .then((processedTxs) => writeToFile(processedTxs, 'sedra-transactions.csv'));
 }
