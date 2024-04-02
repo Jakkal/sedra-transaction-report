@@ -34,4 +34,5 @@ This will generate the file `sedra-transactions.csv`. This CSV is currently comp
 ## Found this useful?
 
 Consider donating to the original author in Kaspa: `kaspa:qq6rz6q40e4t8sft4wsphwwlqm39pzc7ehwsprepe3d5szhkanuagfwd7lxrv`
+
 Donations for the creation of this fork (highly suggest donate to original author instead) `sedra:qps5e0qsck8rcvm2a0gl7zp9z9m279jdjng53pvr7eauzu4gvtsfwuxn4yrxe`
