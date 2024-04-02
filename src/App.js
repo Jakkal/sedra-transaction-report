@@ -1,4 +1,4 @@
-import logo from './Kaspa-LDSP-Dark Reverse.svg';
+import logo from './Sedra_Logo-1.svg';
 import { Component } from 'react';
 import { CSVLink } from 'react-csv';
 import { Grid } from 'react-loader-spinner';
@@ -69,13 +69,13 @@ class App extends Component {
 
           if (prev && prev.txHash === tx.txHash) {
             continue;
-          } 
+          }
 
           const rowData = [tx.timestamp];
 
           if (tx.sendAmount) {
             rowData.push(tx.sendAmount);
-            rowData.push('KAS');
+            rowData.push('SDR');
           } else {
             rowData.push('');
             rowData.push('');
@@ -83,7 +83,7 @@ class App extends Component {
 
           if (tx.receiveAmount) {
             rowData.push(tx.receiveAmount);
-            rowData.push('KAS');
+            rowData.push('SDR');
           } else {
             rowData.push('');
             rowData.push('');
@@ -91,7 +91,7 @@ class App extends Component {
 
           if (tx.sendAmount && tx.feeAmount) {
             rowData.push(tx.feeAmount);
-            rowData.push('KAS');
+            rowData.push('SDR');
           } else {
             rowData.push('');
             rowData.push('');
@@ -138,16 +138,16 @@ class App extends Component {
         </header>
 
         <div className="AppContent">
-          <span className="App-instructions">Add your kaspa addressess below (one per line) then click Generate to download your transaction history as a CSV file</span>
+          <span className="App-instructions">Add your Sedra addressess below (one per line) then click Generate to download your transaction history as a CSV file</span>
           <div className="column InputContainer">
             <textarea
               className="AddressesText"
-              alt="kaspa:youradresseshere"
-              placeholder='kaspa:youraddressesgoeshere'
+              alt="sedra:youradresseshere"
+              placeholder='sedra:youraddressesgoeshere'
               value={this.state.addresses}
               onChange={(event) => {this.setState({addresses: event.target.value})}}
               rows="5"
-            >kaspa:youradresseshere</textarea>
+            >sedra:youradresseshere</textarea>
 
             <label className="Checkboxes">
               <input
@@ -195,7 +195,7 @@ class App extends Component {
             <CSVLink
               className="DownloadLink"
               data={this.state.reportData}
-              filename={"kaspa-transactions-" + (format(new Date(), 'yyyyMMdd-HHmmss')) + ".csv"}
+              filename={"sedra-transactions-" + (format(new Date(), 'yyyyMMdd-HHmmss')) + ".csv"}
               target="_blank"
             >Download Report</CSVLink> :
             ''
@@ -217,7 +217,7 @@ class App extends Component {
             : ''
           }
         </div>
-
+{/*
         <footer className="Footer">
           <div className="DonationQR">
             <QRCode style={{'width': '100%', 'height': '100%'}} value={DONATION_ADDR} />
@@ -229,6 +229,7 @@ class App extends Component {
             </a>
           </div>
         </footer>
+        */}
       </div>
     );
   }
