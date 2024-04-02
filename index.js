@@ -17,7 +17,7 @@ function writeToFile(txs, outputFile) {
         }
 
         if (!tx.compound && !tx.sendToSelf) {
-            writer.write(`"${tx.timestamp}","${tx.sendAmount || ''}","${tx.sendAmount ? 'KAS' : ''}","${tx.receiveAmount || ''}","${tx.receiveAmount ? 'KAS' : ''}","${tx.sendAmount ? tx.feeAmount : ''}","${tx.sendAmount ? 'KAS' : ''}","${tx.txHash}"\n`);
+            writer.write(`"${tx.timestamp}","${tx.sendAmount || ''}","${tx.sendAmount ? 'SDR' : ''}","${tx.receiveAmount || ''}","${tx.receiveAmount ? 'KAS' : ''}","${tx.sendAmount ? tx.feeAmount : ''}","${tx.sendAmount ? 'KAS' : ''}","${tx.txHash}"\n`);
         }
 
         prev = tx;
